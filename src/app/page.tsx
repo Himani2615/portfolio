@@ -1,95 +1,70 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import About from "../../components/About";
+import Navbar from "../../components/Navbar";
+import { Center, Flex, Container, Box, Image } from "@chakra-ui/react";
+import Bio from "../../components/Bio";
+import Skills from "../../components/Skills";
+import Socials from "../../components/Socials";
+import Footer from "../../components/Footer";
+import SketchfabEmbed from "../../components/Model";
+import Hobbies from "../../components/Hobbies";
+import Contact from "../../components/Contact";
+
+// #808588
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Center bg={"#202020"}>
+      <Flex direction={"column"} px={14}>
+        <Navbar />
+        <SketchfabEmbed />
+        <Container>
+          <Box
+            borderRadius="10px"
+            my={6}
+            py={14}
+            px={28}
+            textAlign="center"
+            bg={"#7986CB"}
+            css={{
+              backdropFilter: "blur(10px)",
+              fontSize: "18px",
+              fontWeight: "bold",
+            }}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+            Hey there, I&apos;m a Web Developer bringing ideas to life!
+          </Box>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Box display={{ md: "flex" }} css={{ marginTop: "20px" }}>
+            <Box>
+              <Image
+                src="./me2.png"
+                borderRadius="100%"
+                float="right"
+                boxSize="103"
+                borderColor="white"
+                border="2px solid"
+              />
+              <h1>Himani Singh</h1>
+            </Box>
+            <Box pt={5}>Full Stack Developer | ML Enthusiast |</Box>
+            <Box mt={1}>CSE Major with AI Specialization</Box>
+          </Box>
+          <Box height={70}></Box>
+          {/* <Box bg="#A1A1A1" height="1"></Box> */}
+          <About />
+          <Box height="40"></Box>
+          <Bio />
+          <Box height="40"></Box>
+          {/* <Skills/>
+      <Box height="40"></Box> */}
+          <Hobbies />
+          <Box height={40}></Box>
+          <Socials />
+          <Box height={40}></Box>
+          <Contact />
+          <Footer />
+        </Container>
+      </Flex>
+    </Center>
   );
 }
